@@ -1,0 +1,53 @@
+{
+    "@context": "https://raw.githubusercontent.com/ReproNim/reproschema/1.0.0-rc2/contexts/generic",
+	"@type": "reproschema:Protocol",
+	"@id": "DemoProtocol_schema",
+	"prefLabel": {
+		"en": "Protocol1",
+		"es": "Protocol1_es"
+	},
+	"description": "example Protocol",
+	"schemaVersion": "1.0.0-rc2",
+	"version": "0.0.1",
+	"landingPage": [{
+            "@id": "README.md",
+            "inLanguage": "en"
+        }
+    ],
+	"messages": [
+		{
+			"message": "Test message: Triggered when item1 value is greater than 0",
+			"jsExpression": "item1 > 0"
+		}
+	],
+	"ui": {
+        "addProperties": [
+            {"isAbout": "../activities/demographics/demographics_schema",
+            "variableName": "demographics_schema",
+            "prefLabel": {"en": "Demographics"}
+            },
+            {"isAbout": "../activities/cognitive_sr/cognitive_sr_schema",
+            "variableName": "cognitive_sr_schema",
+            "prefLabel": {"en": "Self-report Cognitive Tests"}
+            },
+            {"isAbout": "../activities/cognitive_p/cognitive_p_schema",
+            "variableName": "cognitive_p_schema",
+            "prefLabel": {"en": "Parent-report Cognitive Tests"}
+            },
+            {"isAbout": "../activities/thankyou/thankyou_schema",
+            "variableName": "thankyou_schema",
+            "prefLabel": {"en": "Thank You"}
+            }
+        ],
+    "order": [
+	    "../demographics/demographics_schema",
+            "../activities/cognitive_sr/cognitive_sr_schema",
+            "../activities/cognitive_p/cognitive_p_schema",
+            "../activities/thankyou/thankyou_schema"
+        ],
+		"shuffle": false,
+		"allow": [
+			"reproschema:AllowExport"
+		]
+	}
+}

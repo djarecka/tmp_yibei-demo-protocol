@@ -1,0 +1,44 @@
+{
+    "@context": [ "https://raw.githubusercontent.com/ReproNim/reproschema/1.0.0-rc4/contexts/generic",
+        {
+            "demo": "https://raw.githubusercontent.com/ReproNim/reproschema-library/master/activities/demographics_and_background_information_v1/items/"
+        }
+    ],
+    "@type": "reproschema:Activity",
+    "@id": "demographics_schema",
+    "prefLabel": "Demographics",
+    "description": "activity to collect demographics and background of the subject",
+    "schemaVersion": "1.0.0-rc4",
+    "version": "0.0.1",
+    "ui": {
+        "addProperties": [
+                {"isAbout": "year_of_birth",
+                "variableName": "demo:year_of_birth"
+                },
+                {
+                    "variableName": "sex",
+                    "isAbout": "demo:sex"
+                },
+                {
+                    "variableName": "gender_identity",
+                    "isAbout": "demo:gender_identity"
+                },
+                {
+                    "variableName": "gender_other_specify",
+                    "isAbout": "demo:other_specify",
+                    "isVis": "gender_identity.includes(-1)"
+                }
+         ],
+        "order": [
+            "demo:year_of_birth",
+            "demo:sex",
+            "demo:gender_identity",
+            "demo:other_specify"
+            ],
+        "shuffle": false,
+        "allow": [
+			"reproschema:AutoAdvance",
+			"reproschema:AllowExport"
+		]
+    }
+}
